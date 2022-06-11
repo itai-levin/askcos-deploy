@@ -1,3 +1,6 @@
 [submodule "data"]
 	path = data
 	url = https://github.com/itai-levin/askcos-deploy.git
+[submodule "bkms-data"]
+	path = bkms-data
+	url = https://github.com/itai-levin/bkms-data.git
