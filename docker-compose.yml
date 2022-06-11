@@ -114,6 +114,12 @@ services:
     expose:
       - 8501
 
+  template-relevance-bkms:
+    image: template-relevance-bkms
+    restart: always
+    expose:
+      - 8501
+
   fast-filter:
     image: ${ASKCOS_IMAGE_REGISTRY}fast-filter:1.0
     restart: always

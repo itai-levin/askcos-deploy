@@ -55,7 +55,7 @@ usage() {
 
 # Worker scales (i.e. number of celery workers)
 n_cr_network_worker=1    # Context recommender neural network worker
-n_tb_coordinator_mcts=2  # Tree builder coordinator
+n_tb_coordinator_mcts=1  # Tree builder coordinator
 n_tb_c_worker=1          # Tree builder chiral worker
 n_sites_worker=1         # Site selectivity worker
 n_impurity_worker=1      # Impurity worker
@@ -419,6 +419,7 @@ start-tf-server() {
 
 start-celery-workers() {
   echo "Starting celery workers..."
+  service docker restart
   docker-compose up -d --scale cr_network_worker=$n_cr_network_worker \
                        --scale tb_coordinator_mcts=$n_tb_coordinator_mcts \
                        --scale tb_c_worker=$n_tb_c_worker \
